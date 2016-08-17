@@ -7,8 +7,8 @@
     "test": "node test/test.js",
     "build": "babel src/ -d build/"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "chenminhua <chenmh@shanghaitech.edu.cn>",
+  "license": "MIT",
   "dependencies": {
     "request": "^2.72.0"
   },
