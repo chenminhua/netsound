@@ -20,6 +20,7 @@ npm install netsound -g
 netsound U2
 ```
 会随机播放U2的歌曲，播放完成后自动播放下一首。
+
 ![U2](screen.png)
 
 
