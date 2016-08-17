@@ -6,8 +6,8 @@
 # mac
 brew install mplayer
 
-# linux
-pip install mplayer
+# ubuntu
+sudo apt-get install mplayer
 ```
 
 ## installation
