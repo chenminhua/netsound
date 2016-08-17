@@ -33,6 +33,4 @@ netsound U2
 [简书](http://www.jianshu.com/p/116acbd568ec)
 
 ## thanks
-[阮一峰的es6教程](http://es6.ruanyifeng.com/)
-
-[网易云api](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/LICENSE)
+api部分使用了[网易云api](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/LICENSE)中的部分代码，但是异步操作部分 将callback全部换成了promise，以方便链式调用。
