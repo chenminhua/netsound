@@ -1,0 +1,57 @@
+#!/usr/local/bin/node
+const api=require('../build/app.js').api
+var exec = require('child_process').exec;
+
+Array.prototype.shuffle = function(){
+  var i = this.length
+  if (i<2){
+    return
+  }
+  while (--i){
+    j = Math.floor(Math.random() *(i+1))
+    temp = this[i]
+    this[i] = this[j]
+    this[j] = temp
+  }
+  return
+}
+
+var name = process.argv[2]
+
+
+api.search(name).then(function(data){
+  var artistid = data.result.artists[0].id
+  return api.getArtistAlbums(artistid)
+}).then(function(albums){
+  var getsongsPromise = albums.map(function(album){
+    return api.getAlbums(album.id)
+  })
+  return Promise.all(getsongsPromise)
+}).then(function(responses){
+  var res = []
+  for (var i = 0; i < responses.length; i++){
+    var tmp = responses[i].map(function(s){
+      return api.song(s.id)
+    })
+    res = res.concat(tmp)
+  }
+  return Promise.all(res)
+}).then(function(songs){
+  songs.shuffle()
+  var urls = songs.map(function(song){
+    return song.mp3Url
+  })
+  var names = songs.map(function(song){
+    return song.name
+  })
+  var i = 0
+  var play = (i) => {
+    console.log("正在播放：" ,name, " ",names[i])
+    exec("mplayer "+urls[i], {maxBuffer: 20 * 1024 * 1024}, (error, stdout, stderr) => {
+      play(++i)
+    })
+  }
+  play(i)
+}).catch(function(err){
+  console.log(err)
+})

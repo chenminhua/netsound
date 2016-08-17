@@ -1,0 +1,19 @@
+{
+  "name": "nemusic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/app.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "build": "babel src/ -d build/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
