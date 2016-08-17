@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
 const api=require('../build/app.js').api
 var exec = require('child_process').exec;
 
