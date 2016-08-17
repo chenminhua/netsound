@@ -19,7 +19,7 @@ npm install netsound -g
 ```
 netsound 谢安琪
 ```
-会随机播放谢安琪的音乐
+会随机播放谢安琪的音乐,播放完成后会随机播放下一首。
 
 ## problems
 有很多歌在终端放不出来，可能是有些歌只能在客户端听（收费问题）
@@ -29,4 +29,5 @@ netsound 谢安琪
 
 ## thanks
 [阮一峰的es6教程](http://es6.ruanyifeng.com/)
+
 [网易云api](https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/LICENSE)
