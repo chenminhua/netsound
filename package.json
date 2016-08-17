@@ -1,6 +1,6 @@
 {
-  "name": "nemusic",
-  "version": "1.0.0",
+  "name": "netsound",
+  "version": "1.0.1",
   "description": "",
   "main": "build/app.js",
   "scripts": {
@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "request": "^2.72.0"
+  },
+  "bin": {
+      "netsound": "bin/music"
   },
   "devDependencies": {
     "babel-core": "^6.9.1",
